@@ -1,3 +1,6 @@
+// Select Elements:
+let questCount = document.querySelector(".quiz-info .count");
+
 function getQuestions() {
   let request = new XMLHttpRequest();
   request.onreadystatechange = function () {
@@ -9,4 +12,6 @@ function getQuestions() {
   request.send();
 }
 
-getQuestions();
+function createBullets(num) {
+  
+}
