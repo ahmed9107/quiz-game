@@ -1,5 +1,6 @@
 // Select Elements:
-let countSpan = document.querySelector(".quiz-info .count");
+let countSpan       = document.querySelector(".quiz-info .count span");
+let bulletContainer = document.querySelector(".bullets .spans");
 
 function getQuestions() {
   let request = new XMLHttpRequest();
@@ -7,7 +8,6 @@ function getQuestions() {
     if (this.readyState === 4 && this.status === 200) {
       let questObj = JSON.parse(this.responseText);
       let questCount = questObj.length;
-      console.log(questCount);
 
       // Create bullets + Set question count
       createBullets(questCount);
@@ -21,4 +21,13 @@ getQuestions();
 
 function createBullets(num) {
   countSpan.innerHTML = num;
+
+  for (let i = 0; i < num; i++) {
+    let bullet = document.createElement("span");
+    if (i === 0) {
+      bullet.className = "on";
+    }
+
+    bulletContainer.appendChild(bullet);
+  }
 }
