@@ -11,6 +11,9 @@ function getQuestions() {
 
       // Create bullets + Set question count
       createBullets(questCount);
+
+      // Add Questions Data
+      addQuestions();
     }
   };
   request.open("GET", "../json/questions.json", true);
