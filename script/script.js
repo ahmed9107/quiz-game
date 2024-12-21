@@ -34,3 +34,7 @@ function createBullets(num) {
     bulletContainer.appendChild(bullet);
   }
 }
+
+function addQuestions() {
+  
+}
