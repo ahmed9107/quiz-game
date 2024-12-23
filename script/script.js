@@ -36,5 +36,5 @@ function createBullets(num) {
 }
 
 function addQuestions() {
-  
+  console.log("get")
 }
