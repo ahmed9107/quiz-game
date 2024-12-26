@@ -37,4 +37,7 @@ function createBullets(num) {
 }
 
 function addQuestions(obj, count) {
+  let questionTitle = document.createElement("h2");
+  console.log(obj);
+  // let questionTxt   = document.createTextNode();
 }
