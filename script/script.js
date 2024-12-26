@@ -37,6 +37,4 @@ function createBullets(num) {
 }
 
 function addQuestions(obj, count) {
-  console.log(obj);
-  console.log(count);
 }
