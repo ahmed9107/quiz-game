@@ -1,5 +1,6 @@
 // Select Elements:
 let countSpan       = document.querySelector(".quiz-info .count span");
+let quizArea        = document.querySelector(".quiz-area");
 let bulletContainer = document.querySelector(".bullets .spans");
 let currentIndex    = 0;
 
@@ -14,7 +15,7 @@ function getQuestions() {
       createBullets(questCount);
 
       // Add Questions Data
-      addQuestions(questCount[0], questCount);
+      addQuestions(questObj[0], questObj);
     }
   };
   request.open("GET", "../json/questions.json", true);
@@ -38,5 +39,7 @@ function createBullets(num) {
 
 function addQuestions(obj, count) {
   let questionTitle = document.createElement("h2");
-  let questionTxt   = document.createTextNode();
+  let questionTxt   = document.createTextNode(obj.title);
+  questionTitle.appendChild(questionTxt);
+  quizArea.appendChild(questionTitle);
 }
