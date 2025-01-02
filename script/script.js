@@ -2,6 +2,7 @@
 let countSpan       = document.querySelector(".quiz-info .count span");
 let quizArea        = document.querySelector(".quiz-area");
 let bulletContainer = document.querySelector(".bullets .spans");
+let answerArea      = document.querySelector(".answers-area");
 let currentIndex    = 0;
 
 function getQuestions() {
@@ -50,5 +51,13 @@ function addQuestions(obj, count) {
     radioInput.type   = "radio";
     radioInput.id     = `answer_${i}`;
     radioInput.dataset.answer = obj[`answer_${i}`];
+
+    let label     = document.createElement("label");
+    label.htmlFor = `answer_${i}`;
+    let labelTxt  = document.createTextNode(obj[`answer_${i}`]);
+    label.appendChild(labelTxt);
+    mainDiv.appendChild(radioInput);
+    mainDiv.appendChild(label);
+    answerArea.appendChild(mainDiv);
   }
 }
