@@ -3,6 +3,7 @@ let countSpan       = document.querySelector(".quiz-info .count span");
 let quizArea        = document.querySelector(".quiz-area");
 let bulletContainer = document.querySelector(".bullets .spans");
 let answerArea      = document.querySelector(".answers-area");
+let submitBtn       = document.querySelector(".submit-button");
 let currentIndex    = 0;
 
 function getQuestions() {
@@ -16,7 +17,12 @@ function getQuestions() {
       createBullets(questCount);
 
       // Add Questions Data
-      addQuestions(questObj[0], questObj);
+      addQuestions(questObj[currentIndex], questCount);
+
+      // Click on submit btn
+      submitBtn.onclick = () => {
+        let rightAnswer = questObj[currentIndex].right_answer;
+      }
     }
   };
   request.open("GET", "../json/questions.json", true);
